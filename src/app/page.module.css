@@ -1,3 +1,7 @@
+.main {
+  height: 200vh;
+}
+
 /* Mobile */
 @media (max-width: 700px) {
 }

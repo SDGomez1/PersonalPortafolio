@@ -2,13 +2,13 @@
   position: fixed;
   background: #e7e6e6;
   will-change: transform;
-  right: 0;
+  right: 00;
   top: 0;
   bottom: 0;
   width: 400px;
   padding-top: 100px;
   padding-left: 100px;
-  z-index: -1;
+  z-index: 1;
 }
 
 .menu li {
