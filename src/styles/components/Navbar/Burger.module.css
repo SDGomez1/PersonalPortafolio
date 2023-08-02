@@ -1,0 +1,13 @@
+.main {
+  width: 60px;
+  height: 60px;
+  background-color: #d9d9d9;
+  border-radius: 60px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  user-select: none;
+}
+.main:only-child {
+  user-select: none;
+}
