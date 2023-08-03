@@ -12,12 +12,21 @@
 
   font-size: 72px;
   font-weight: 500;
+  background: linear-gradient(
+    315deg,
+    #1a5859 0%,
+    rgba(153, 179, 180, 0.84) 100%
+  );
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
 }
 .main h2 {
   text-align: center;
   font-size: 20px;
   font-weight: 300;
   width: 660px;
+  color: #1a5859;
 }
 
 .main p,
@@ -39,6 +48,7 @@
   bottom: 180px;
   width: 41px;
   height: 41px;
+  background: linear-gradient(180deg, #e9eeef 0%, #d2ddde 100%);
 }
 
 #two {
@@ -46,6 +56,7 @@
   top: 180px;
   width: 26.191px;
   height: 26.191px;
+  background: #e9eeef;
 }
 
 #three {
@@ -53,28 +64,39 @@
   top: 200px;
   width: 26.191px;
   height: 26.191px;
+  background: #f5f6f7;
 }
 #four {
   left: 1200px;
   top: 220px;
   width: 41px;
   height: 41px;
+  background: linear-gradient(180deg, #e9eeef 0%, #d4dfe0 100%);
 }
 #five {
   left: 800px;
   bottom: 200px;
   width: 21.168px;
   height: 21.168px;
+  background: #e9eeef;
 }
 
 #JS {
   left: 260px;
   top: 160px;
+  background: linear-gradient(180deg, #d2ddde 0%, #bbcccd 100%);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
 }
 
 #CSS {
   left: 1100px;
   bottom: 160px;
+  background: linear-gradient(180deg, #cedadb 0%, #c0d0d1 100%);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
 }
 
 @media (min-width: 1441px) {

@@ -74,7 +74,7 @@ export const Hero = () => {
           translateY: scrollOutput,
           translateX: scrollOutput,
           filter: `blur(${blur})`,
-          rotate: "26.624deg",
+          rotate: "-23.95deg",
         }}
       >
         CSS
@@ -85,7 +85,7 @@ export const Hero = () => {
           translateY: scrollOutput,
           translateX: scrollOutputXminus,
           filter: `blur(${blur})`,
-          rotate: "-36.038deg",
+          rotate: "17.45deg",
         }}
       />
       <motion.span
@@ -121,7 +121,7 @@ export const Hero = () => {
           translateY: scrollOutput,
           translateX: scrollOutput,
           filter: `blur(${blur})`,
-          rotate: "18.63deg",
+          rotate: "-8.34deg",
         }}
       />
     </section>

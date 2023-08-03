@@ -18,8 +18,20 @@ export const StudyCases = () => {
   if (!state) {
     return (
       <section ref={ref} className={styles.main}>
-        <WorkStudyCase />
-        <WorkStudyCase />
+        <WorkStudyCase
+          title="Amazon Product Gallery"
+          subtitle="UX Design | Developed with NextJs"
+          description="Complete design and develop of a web page based on showing the best product deals on Amazon"
+          source="/SAD.png"
+          idImage="SADImage"
+        />
+        <WorkStudyCase
+          title="MS Dev col Landing Page"
+          subtitle="UX Design | Developed with ReactJs"
+          description="Complete design and develop of a web page based on showing the best product deals on Amazon"
+          source="/MSDEV.png"
+          idImage="MSDEVImage"
+        />
       </section>
     );
   } else {

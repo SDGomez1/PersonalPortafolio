@@ -12,7 +12,7 @@ export const Slider = () => {
       <motion.div
         className={styles.handle}
         initial={{ left: "5px" }}
-        animate={state ? { left: "115px" } : { left: "5px" }}
+        animate={state ? { left: "112px" } : { left: "8px" }}
         transition={{ duration: 0.3, type: "spring" }}
       ></motion.div>
       <p
@@ -24,10 +24,16 @@ export const Slider = () => {
         Work
       </p>
       <p
-        style={{ fontWeight: state ? "bold" : "normal" }}
+        style={{
+          fontWeight: state ? "bold" : "normal",
+          background: state
+            ? "background: linear-gradient(300deg, #8DABAC 0%, #99B3B4 87.22%)"
+            : "background: linear-gradient(300deg, #8DABAC 0%, #99B3B4 87.22%)",
+        }}
         onClick={() => {
           dispatch(switching(true));
         }}
+        className={styles.project}
       >
         Projects
       </p>
