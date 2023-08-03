@@ -5,6 +5,7 @@
   justify-content: center;
   align-items: center;
   height: 600px;
+  background-color: transparent;
 }
 .main h1 {
   text-align: center;
@@ -38,7 +39,6 @@
   bottom: 180px;
   width: 41px;
   height: 41px;
-  transform: rotate(-36.038deg);
 }
 
 #two {
@@ -46,7 +46,6 @@
   top: 180px;
   width: 26.191px;
   height: 26.191px;
-  transform: rotate(-10.236deg);
 }
 
 #three {
@@ -54,31 +53,64 @@
   top: 200px;
   width: 26.191px;
   height: 26.191px;
-  transform: rotate(29.626deg);
 }
 #four {
   left: 1200px;
   top: 220px;
   width: 41px;
   height: 41px;
-  transform: rotate(33.342deg);
 }
 #five {
   left: 800px;
   bottom: 200px;
   width: 21.168px;
   height: 21.168px;
-  transform: rotate(18.63deg);
 }
 
 #JS {
   left: 260px;
   top: 160px;
-  transform: rotate(-20.037deg);
 }
 
 #CSS {
   left: 1100px;
   bottom: 160px;
-  transform: rotate(26.624deg);
+}
+
+@media (min-width: 1441px) {
+  .main {
+    height: 800px;
+  }
+  #one {
+    left: 420px;
+  }
+
+  #two {
+    left: 830px;
+  }
+
+  #three {
+    left: 1200px;
+  }
+  #four {
+    left: 1500px;
+  }
+  #five {
+    left: 1100px;
+  }
+
+  #JS {
+    left: 460px;
+    top: 200px;
+  }
+
+  #CSS {
+    left: 1400px;
+  }
+}
+
+@media (max-width: 700px) {
+}
+
+@media (min-width: 701px) and (max-width: 1120px) {
 }

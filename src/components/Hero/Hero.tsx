@@ -1,3 +1,4 @@
+"use client";
 import styles from "@/styles/components/Hero/Hero.module.css";
 import {
   motion,

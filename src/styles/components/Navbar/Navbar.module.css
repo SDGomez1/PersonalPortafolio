@@ -1,6 +1,10 @@
 .main {
+  position: fixed;
+  top: 0;
   display: flex;
   justify-content: space-between;
   width: 100%;
   padding: 30px 60px;
+  background-color: transparent;
+  z-index: 1000;
 }

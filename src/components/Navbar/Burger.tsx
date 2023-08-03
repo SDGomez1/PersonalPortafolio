@@ -1,3 +1,5 @@
+"use client";
+
 import styles from "@/styles/components/Navbar/Burger.module.css";
 import { useEffect, useState } from "react";
 import { useAnimate, stagger } from "framer-motion";
@@ -32,7 +34,7 @@ function useAnimation(isOpen: boolean) {
       [
         "nav",
         { right: isOpen ? "0" : "-400px" },
-        { ease: isOpen ? [0.08, 0.65, 0.53, 0.96] : [], duration: 0.6 },
+        { ease: isOpen ? [0.08, 0.65, 0.53, 0.96] : [], duration: 0.3 },
       ],
       [
         "li",
