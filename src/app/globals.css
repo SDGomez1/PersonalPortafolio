@@ -33,15 +33,27 @@ a {
   width: 647px;
   height: 560px;
 }
-
+#AIPPIAImage {
+  position: relative;
+  display: flex;
+  width: 600px;
+  height: 350px;
+  transform: translateY(-120px);
+}
+#MEDICALImage {
+  position: relative;
+  display: flex;
+  width: 800px;
+  height: 392px;
+}
 @media (min-width: 1441px) {
   #SADImage {
     width: 574px;
     height: 577px;
   }
   #MSDEVImage {
-    width: 717px;
-    height: 610px;
+    width: 817px;
+    height: 710px;
   }
 }
 

@@ -1,24 +1,37 @@
 import styles from "@/styles/components/StudyCases/ProjectStudyCase.module.css";
 import { motion } from "framer-motion";
 import { useAppSelector } from "@/redux/hooks";
-export const ProjectStudyCase = () => {
-  const isInView = useAppSelector((state) => state.workInView.value);
+import Image from "next/image";
 
+export const ProjectStudyCase = (props: {
+  title: string;
+  subtitle: string;
+  description: string;
+  imgSrc: string;
+  idImg: string;
+}) => {
+  const isInView = useAppSelector((state) => state.workInView.value);
   return (
     <motion.div
       className={styles.main}
-      animate={{
-        background: isInView ? "rgba(245, 246, 247, 1)" : "rgba(26, 88, 89, 1)",
+      animate={isInView ? { background: "#320C67" } : { background: "#320C67" }}
+      whileHover={{
+        scale: 1.02,
+        borderRadius: "20px",
+        boxShadow: "0px 4px 43px -4px rgba(0, 0, 0, 0.25)",
       }}
+      transition={{ duration: 0.3, type: "tween" }}
     >
       <div className={styles.textContainer}>
-        <h3>Proyecto 1</h3>
-        <p>Subtitulo</p>
-        <p>Esta va ser la descripcion</p>
-        <button>botton</button>
+        <h3>{props.title}</h3>
+        <p className={styles.subtitle}>{props.subtitle}</p>
+        <p className={styles.description}>{props.description}</p>
+        <button>See Project learnings</button>
       </div>
-      <div>
-        <span>imagen</span>
+      <div id={styles.image}>
+        <span id={props.idImg}>
+          <Image src={props.imgSrc} fill alt="" />
+        </span>
       </div>
     </motion.div>
   );

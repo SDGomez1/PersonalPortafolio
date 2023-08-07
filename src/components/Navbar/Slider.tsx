@@ -8,15 +8,26 @@ export const Slider = () => {
   const dispatch = useAppDispatch();
 
   return (
-    <div className={styles.slider}>
+    <motion.div
+      className={styles.slider}
+      animate={state ? { background: "#EED5FF" } : { background: "#e9eeef" }}
+    >
       <motion.div
         className={styles.handle}
         initial={{ left: "5px" }}
-        animate={state ? { left: "112px" } : { left: "8px" }}
+        animate={
+          state
+            ? { left: "112px", background: "#FAF2FF" }
+            : { left: "8px", background: "#F5F6F7" }
+        }
         transition={{ duration: 0.3, type: "spring" }}
       ></motion.div>
       <p
-        style={{ fontWeight: state ? "normal" : "bold" }}
+        style={
+          state
+            ? { fontWeight: "normal", color: "#703FCE" }
+            : { fontWeight: "bold", color: "#555" }
+        }
         onClick={() => {
           dispatch(switching(false));
         }}
@@ -27,8 +38,8 @@ export const Slider = () => {
         style={{
           fontWeight: state ? "bold" : "normal",
           background: state
-            ? "background: linear-gradient(300deg, #8DABAC 0%, #99B3B4 87.22%)"
-            : "background: linear-gradient(300deg, #8DABAC 0%, #99B3B4 87.22%)",
+            ? "linear-gradient(300deg, #5B23C6 0%, #C25BEF 100%) "
+            : "linear-gradient(300deg, #8DABAC 0%, #99B3B4 87.22%)",
         }}
         onClick={() => {
           dispatch(switching(true));
@@ -37,6 +48,6 @@ export const Slider = () => {
       >
         Projects
       </p>
-    </div>
+    </motion.div>
   );
 };

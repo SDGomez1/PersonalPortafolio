@@ -4,12 +4,14 @@ import styles from "@/styles/components/Navbar/Burger.module.css";
 import { useEffect, useState } from "react";
 import { useAnimate, stagger } from "framer-motion";
 import { Menu } from "./Menu";
+import { useAppSelector } from "@/redux/hooks";
+import { motion } from "framer-motion";
 
 const Path = (props: any) => (
   <path
     fill="transparent"
     strokeWidth="3"
-    stroke="#1A5859"
+    stroke={props.strokeColor}
     strokeLinecap="round"
     {...props}
   />
@@ -55,9 +57,12 @@ function useAnimation(isOpen: boolean) {
 export const Burger = () => {
   const [isOpen, setIsOpen] = useState(false);
   const scope = useAnimation(isOpen);
+  const state = useAppSelector((state) => state.switch.value);
   return (
     <div className={styles.main} onClick={() => setIsOpen(!isOpen)} ref={scope}>
-      <span>
+      <motion.span
+        animate={state ? { background: "#EED5FF" } : { background: "#E9EEEF" }}
+      >
         <svg width="23" height="18" viewBox="0 0 23 18">
           <Path
             d="M 2 2.5 L 20 2.5"
@@ -66,8 +71,14 @@ export const Burger = () => {
               closed: { d: "M 2 2.5 L 20 2.5" },
               open: { d: "M 3 16.5 L 17 2.5" },
             }}
+            strokeColor={state ? "#6127C9" : "#1A5859"}
           />
-          <Path d="M 2 9.423 L 20 9.423" opacity="1" className="middle" />
+          <Path
+            d="M 2 9.423 L 20 9.423"
+            opacity="1"
+            className="middle"
+            strokeColor={state ? "#6127C9" : "#1A5859"}
+          />
           <Path
             d="M 2 16.346 L 20 16.346"
             className="bottom"
@@ -75,9 +86,10 @@ export const Burger = () => {
               closed: { d: "M 2 16.346 L 20 16.346" },
               open: { d: "M 3 2.5 L 17 16.346" },
             }}
+            strokeColor={state ? "#6127C9" : "#1A5859"}
           />
         </svg>
-      </span>
+      </motion.span>
       <Menu />
     </div>
   );

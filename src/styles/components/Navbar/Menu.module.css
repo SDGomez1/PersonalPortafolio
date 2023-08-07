@@ -2,7 +2,7 @@
   position: fixed;
   background: #e9eeef;
   will-change: transform;
-  right: 00;
+  right: -400px;
   top: 0;
   bottom: 0;
   width: 400px;

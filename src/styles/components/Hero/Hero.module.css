@@ -9,7 +9,6 @@
 }
 .main h1 {
   text-align: center;
-
   font-size: 72px;
   font-weight: 500;
   background: linear-gradient(
@@ -17,8 +16,8 @@
     #1a5859 0%,
     rgba(153, 179, 180, 0.84) 100%
   );
-  background-clip: text;
-  -webkit-background-clip: text;
+  background-clip: text !important;
+  -webkit-background-clip: text !important;
   -webkit-text-fill-color: transparent;
 }
 .main h2 {
@@ -85,8 +84,8 @@
   left: 260px;
   top: 160px;
   background: linear-gradient(180deg, #d2ddde 0%, #bbcccd 100%);
-  background-clip: text;
-  -webkit-background-clip: text;
+  background-clip: text !important;
+  -webkit-background-clip: text !important;
   -webkit-text-fill-color: transparent;
 }
 
@@ -94,8 +93,8 @@
   left: 1100px;
   bottom: 160px;
   background: linear-gradient(180deg, #cedadb 0%, #c0d0d1 100%);
-  background-clip: text;
-  -webkit-background-clip: text;
+  background-clip: text !important;
+  -webkit-background-clip: text !important;
   -webkit-text-fill-color: transparent;
 }
 

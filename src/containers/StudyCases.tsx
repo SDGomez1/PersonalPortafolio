@@ -11,7 +11,7 @@ export const StudyCases = () => {
   const dispatch = useAppDispatch();
 
   const ref = useRef(null);
-  const isInView = useInView(ref, { amount: 0.3 });
+  const isInView = useInView(ref, { amount: 0.2 });
   useEffect(() => {
     dispatch(setInView(isInView));
   });
@@ -28,16 +28,36 @@ export const StudyCases = () => {
         <WorkStudyCase
           title="MS Dev col Landing Page"
           subtitle="UX Design | Developed with ReactJs"
-          description="Complete design and develop of a web page based on showing the best product deals on Amazon"
+          description="Brand Concept, page design, integration with whatsApp and dinamic animations. Coded and deployed entirely"
           source="/MSDEV.png"
           idImage="MSDEVImage"
+        />
+        <WorkStudyCase
+          title="AIPPIA WebPage"
+          subtitle="Coding | FullStack Development with NextJs"
+          description="Code implementation with backend API connections to MailChimp. From design to coded website"
+          source="/AIPPIA.png"
+          idImage="AIPPIAImage"
         />
       </section>
     );
   } else {
     return (
       <section className={styles.main}>
-        <ProjectStudyCase />
+        <ProjectStudyCase
+          title="Medical Appointment | Web App"
+          subtitle="FullStack with NextJs | Database schema design"
+          description="Code implementation with backend API connections to MailChimp. From design to coded website"
+          imgSrc="/MedicalAPP.png"
+          idImg="MEDICALImage"
+        />
+        <ProjectStudyCase
+          title="Llama Gallery | Web Page"
+          subtitle="FullStack with NextJs | Database schema design"
+          description="Code implementation with backend API connections to MailChimp. From design to coded website"
+          imgSrc="/LlamaGallery.png"
+          idImg="MEDICALImage"
+        />
       </section>
     );
   }
