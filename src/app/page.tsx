@@ -21,7 +21,7 @@ export default function Home() {
       }
       transition={{ duration: 0.3, type: "tween" }}
     >
-      <Navbar />
+      <Navbar showSlider={true} />
       <Hero />
       <StudyCases />
     </motion.div>

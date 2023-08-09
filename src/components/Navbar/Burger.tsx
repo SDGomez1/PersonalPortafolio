@@ -11,7 +11,7 @@ const Path = (props: any) => (
   <path
     fill="transparent"
     strokeWidth="3"
-    stroke={props.strokeColor}
+    stroke={props.strokecolor}
     strokeLinecap="round"
     {...props}
   />
@@ -59,9 +59,10 @@ export const Burger = () => {
   const scope = useAnimation(isOpen);
   const state = useAppSelector((state) => state.switch.value);
   return (
-    <div className={styles.main} onClick={() => setIsOpen(!isOpen)} ref={scope}>
+    <div className={styles.main} ref={scope}>
       <motion.span
         animate={state ? { background: "#EED5FF" } : { background: "#E9EEEF" }}
+        onClick={() => setIsOpen(!isOpen)}
       >
         <svg width="23" height="18" viewBox="0 0 23 18">
           <Path
@@ -71,13 +72,13 @@ export const Burger = () => {
               closed: { d: "M 2 2.5 L 20 2.5" },
               open: { d: "M 3 16.5 L 17 2.5" },
             }}
-            strokeColor={state ? "#6127C9" : "#1A5859"}
+            strokecolor={state ? "#6127C9" : "#1A5859"}
           />
           <Path
             d="M 2 9.423 L 20 9.423"
             opacity="1"
             className="middle"
-            strokeColor={state ? "#6127C9" : "#1A5859"}
+            strokecolor={state ? "#6127C9" : "#1A5859"}
           />
           <Path
             d="M 2 16.346 L 20 16.346"
@@ -86,7 +87,7 @@ export const Burger = () => {
               closed: { d: "M 2 16.346 L 20 16.346" },
               open: { d: "M 3 2.5 L 17 16.346" },
             }}
-            strokeColor={state ? "#6127C9" : "#1A5859"}
+            strokecolor={state ? "#6127C9" : "#1A5859"}
           />
         </svg>
       </motion.span>

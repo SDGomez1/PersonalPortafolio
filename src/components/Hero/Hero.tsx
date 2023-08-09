@@ -73,8 +73,9 @@ export const Hero = () => {
         style={raleway.style}
         animate={state ? { color: "#FFFFFF" } : { color: "#1a5859" }}
       >
-        A Full stack developer that loves to develop applications. I do the
-        design, coding and deploying. In Bogota, Colombia
+        {state
+          ? "These are my projects, focused on learning new skills, using new procedures and dicovering new ways to approach to web development"
+          : "A Full stack developer that loves to develop applications. I do the design, coding and deploying. In Bogota, Colombia"}
       </motion.h2>
       <motion.p
         id={styles.JS}

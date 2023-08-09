@@ -1,16 +1,37 @@
 .menu {
   position: fixed;
   background: #e9eeef;
+
   will-change: transform;
   right: -400px;
   top: 0;
   bottom: 0;
   width: 400px;
-  padding-top: 100px;
-  padding-left: 100px;
+  padding-top: 140px;
+  padding-left: 48px;
   z-index: 1;
 }
-
-.menu li {
+.menu ul {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
   list-style: none;
+}
+.menu li {
+  display: flex;
+  align-items: center;
+  flex-shrink: 0;
+  margin-bottom: 24px;
+  font-size: 20px;
+  pointer-events: all;
+  cursor: pointer;
+}
+
+.menu svg {
+  list-style: none;
+  margin-right: 16px;
+}
+
+.menu div {
+  height: 100%;
 }
