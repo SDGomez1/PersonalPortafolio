@@ -1,10 +1,13 @@
-import { useAppSelector } from "@/redux/hooks";
+import { changeLanguage } from "@/redux/features/currentLanguage/currentLanguageSlice";
+import { useAppDispatch, useAppSelector } from "@/redux/hooks";
 import styles from "@/styles/components/Navbar/Menu.module.css";
 import { motion } from "framer-motion";
 import Link from "next/link";
 
 export const Menu = () => {
   const state = useAppSelector((state) => state.switch.value);
+  const currentLanguage = useAppSelector((state) => state.language.value);
+  const dispatch = useAppDispatch();
   return (
     <>
       <motion.nav
@@ -30,67 +33,72 @@ export const Menu = () => {
                 <circle cx="25" cy="14.17" r="13.4" />
                 <path d="m49.21,51.19H.79c.85-13.19,11.36-23.61,24.21-23.61s23.36,10.42,24.21,23.61Z" />
               </svg>
-              About Me
+              {!currentLanguage ? "About Me" : "Sobre mí"}
             </motion.li>
           </Link>
-          <motion.li
-            style={state ? { color: "#6127C9" } : { color: "#366D6E" }}
-            whileHover={{ marginLeft: "10px" }}
-          >
-            <svg
-              id="Capa_1"
-              data-name="Capa 1"
-              xmlns="http://www.w3.org/2000/svg"
-              viewBox="0 0 50 50"
-              stroke={state ? "#6127C9" : "#366D6E"}
-              height="20"
-              width="20"
-              fill={state ? "#6127C9" : "#366D6E"}
+          <Link href="/Electronics">
+            <motion.li
+              style={state ? { color: "#6127C9" } : { color: "#366D6E" }}
+              whileHover={{ marginLeft: "10px" }}
             >
-              <circle cx="38.61" cy="9.9" r="3.45" />
-              <circle cx="25" cy="4.61" r="3.45" />
-              <circle cx="43.77" cy="28.45" r="3.45" />
-              <circle cx="6.91" cy="28.45" r="3.45" />
-              <circle cx="11.52" cy="9.9" r="3.45" />
-              <line x1="25" y1="8.06" x2="25" y2="50" />
-              <line x1="6.91" y1="38.85" x2="6.91" y2="31.9" />
-              <line x1="11.74" y1="43.68" x2="6.99" y2="38.93" />
-              <line x1="11.74" y1="50" x2="11.74" y2="43.68" />
-              <line x1="11.52" y1="19.78" x2="11.52" y2="13.85" />
-              <line x1="17.9" y1="26.16" x2="11.52" y2="19.78" />
-              <line x1="17.9" y1="50" x2="17.9" y2="26.16" />
-              <line x1="32.03" y1="50" x2="32.03" y2="27.1" />
-              <line x1="38.61" y1="20.52" x2="32.03" y2="27.1" />
-              <line x1="38.61" y1="20.52" x2="38.61" y2="13.35" />
-              <line x1="38.23" y1="50" x2="38.23" y2="44.06" />
-              <line x1="43.77" y1="38.52" x2="38.23" y2="44.06" />
-              <line x1="43.77" y1="31.9" x2="43.77" y2="38.52" />
-            </svg>
-            Electronics
-          </motion.li>
-          <motion.li
-            style={state ? { color: "#6127C9" } : { color: "#366D6E" }}
-            whileHover={{ marginLeft: "10px" }}
-          >
-            <svg
-              id="Capa_1"
-              data-name="Capa 1"
-              xmlns="http://www.w3.org/2000/svg"
-              viewBox="0 0 50 50"
-              height="20"
-              width="20"
-              fill={state ? "#6127C9" : "#366D6E"}
+              <svg
+                id="Capa_1"
+                data-name="Capa 1"
+                xmlns="http://www.w3.org/2000/svg"
+                viewBox="0 0 50 50"
+                stroke={state ? "#6127C9" : "#366D6E"}
+                height="20"
+                width="20"
+                fill={state ? "#6127C9" : "#366D6E"}
+              >
+                <circle cx="38.61" cy="9.9" r="3.45" />
+                <circle cx="25" cy="4.61" r="3.45" />
+                <circle cx="43.77" cy="28.45" r="3.45" />
+                <circle cx="6.91" cy="28.45" r="3.45" />
+                <circle cx="11.52" cy="9.9" r="3.45" />
+                <line x1="25" y1="8.06" x2="25" y2="50" />
+                <line x1="6.91" y1="38.85" x2="6.91" y2="31.9" />
+                <line x1="11.74" y1="43.68" x2="6.99" y2="38.93" />
+                <line x1="11.74" y1="50" x2="11.74" y2="43.68" />
+                <line x1="11.52" y1="19.78" x2="11.52" y2="13.85" />
+                <line x1="17.9" y1="26.16" x2="11.52" y2="19.78" />
+                <line x1="17.9" y1="50" x2="17.9" y2="26.16" />
+                <line x1="32.03" y1="50" x2="32.03" y2="27.1" />
+                <line x1="38.61" y1="20.52" x2="32.03" y2="27.1" />
+                <line x1="38.61" y1="20.52" x2="38.61" y2="13.35" />
+                <line x1="38.23" y1="50" x2="38.23" y2="44.06" />
+                <line x1="43.77" y1="38.52" x2="38.23" y2="44.06" />
+                <line x1="43.77" y1="31.9" x2="43.77" y2="38.52" />
+              </svg>
+              {!currentLanguage ? "Electronics" : "Electrónica"}
+            </motion.li>
+          </Link>
+          <Link href="/Design">
+            <motion.li
+              style={state ? { color: "#6127C9" } : { color: "#366D6E" }}
+              whileHover={{ marginLeft: "10px" }}
             >
-              <path d="m10.83,50v-11.09h-5.45v-4.86h39.24v4.84h-5.45v11.1h-4.89v-4.22H15.72v4.22h-4.89Zm4.9-7.22h18.52v-3.83H15.73v3.83Z" />
-              <path d="m41.68,31.07H8.31V12.71h33.36v18.35Z" />
-              <path d="m22.08,4.87V0h5.83v4.85h5.38v4.87h-16.58v-4.85h5.37Z" />
-            </svg>
-            Design
-          </motion.li>
+              <svg
+                id="Capa_1"
+                data-name="Capa 1"
+                xmlns="http://www.w3.org/2000/svg"
+                viewBox="0 0 50 50"
+                height="20"
+                width="20"
+                fill={state ? "#6127C9" : "#366D6E"}
+              >
+                <path d="m10.83,50v-11.09h-5.45v-4.86h39.24v4.84h-5.45v11.1h-4.89v-4.22H15.72v4.22h-4.89Zm4.9-7.22h18.52v-3.83H15.73v3.83Z" />
+                <path d="m41.68,31.07H8.31V12.71h33.36v18.35Z" />
+                <path d="m22.08,4.87V0h5.83v4.85h5.38v4.87h-16.58v-4.85h5.37Z" />
+              </svg>
+              {!currentLanguage ? "Design" : "Diseño"}
+            </motion.li>
+          </Link>
           <div></div>
           <motion.li
             style={state ? { color: "#6127C9" } : { color: "#366D6E" }}
             whileHover={{ marginLeft: "10px" }}
+            onClick={() => dispatch(changeLanguage())}
           >
             <svg
               id="Capa_1"
@@ -107,7 +115,7 @@ export const Menu = () => {
                 <path d="m36,29.37c0,.97-.25,1.85-.75,2.63-.5.78-1.24,1.38-2.2,1.82s-2.11.66-3.44.66c-1.59,0-2.9-.3-3.93-.9-.73-.43-1.33-1.01-1.79-1.73-.46-.72-.69-1.42-.69-2.1,0-.4.14-.73.41-1.02.27-.28.62-.42,1.05-.42.34,0,.64.11.87.33.24.22.44.55.61.98.2.51.43.94.66,1.29.24.34.57.63,1.01.85.43.22,1,.34,1.7.34.97,0,1.75-.23,2.36-.68.6-.45.91-1.01.91-1.69,0-.53-.16-.97-.49-1.3-.33-.33-.75-.59-1.26-.76-.52-.18-1.21-.36-2.07-.56-1.16-.27-2.13-.59-2.91-.95-.78-.36-1.4-.86-1.86-1.48-.46-.63-.69-1.4-.69-2.34s.24-1.67.73-2.36c.48-.69,1.18-1.22,2.1-1.59.92-.37,1.99-.55,3.23-.55.99,0,1.84.12,2.57.37.72.25,1.32.57,1.8.98.48.41.82.83,1.04,1.28.22.45.33.88.33,1.31,0,.39-.14.74-.41,1.05-.27.31-.62.47-1.03.47-.37,0-.66-.09-.85-.28-.19-.19-.4-.49-.63-.92-.29-.61-.64-1.08-1.06-1.42-.41-.34-1.07-.51-1.98-.51-.84,0-1.52.19-2.04.56-.52.37-.77.82-.77,1.34,0,.32.09.6.26.84.18.23.42.44.73.6.31.17.62.3.93.4.31.1.84.23,1.56.42.91.21,1.73.45,2.47.7.74.26,1.36.57,1.88.93.52.37.92.83,1.21,1.39.29.56.43,1.25.43,2.06Z" />
               </g>
             </svg>
-            Spanish
+            {currentLanguage ? "English" : "Español"}
           </motion.li>
         </ul>
       </motion.nav>

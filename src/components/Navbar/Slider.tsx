@@ -5,6 +5,7 @@ import { switching } from "@/redux/features/switchState/SwitchStateSlice";
 
 export const Slider = () => {
   const state = useAppSelector((state) => state.switch.value);
+  const currentLanguage = useAppSelector((state) => state.language.value);
   const dispatch = useAppDispatch();
 
   return (
@@ -32,7 +33,7 @@ export const Slider = () => {
           dispatch(switching(false));
         }}
       >
-        Work
+        {!currentLanguage ? "Work" : "Trabajos"}
       </p>
       <p
         style={{
@@ -46,7 +47,7 @@ export const Slider = () => {
         }}
         className={styles.project}
       >
-        Projects
+        {!currentLanguage ? "Projects" : "Ideas"}
       </p>
     </motion.div>
   );
