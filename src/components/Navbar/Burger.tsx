@@ -51,7 +51,7 @@ function useAnimation(isOpen: boolean) {
         },
       ],
     ]);
-  }, [isOpen]);
+  }, [isOpen, animate]);
   return scope;
 }
 export const Burger = () => {
