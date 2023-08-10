@@ -6,6 +6,7 @@ import { Hero } from "@/components/Hero/Hero";
 import { StudyCases } from "@/containers/StudyCases";
 import { useAppSelector } from "@/redux/hooks";
 import { motion } from "framer-motion";
+import { Footer } from "@/components/Footer/Footer";
 export default function Home() {
   const state = useAppSelector((state) => state.switch.value);
   const isInView = useAppSelector((state) => state.workInView.value);
@@ -24,6 +25,7 @@ export default function Home() {
       <Navbar showSlider={true} />
       <Hero />
       <StudyCases />
+      <Footer />
     </motion.div>
   );
 }
