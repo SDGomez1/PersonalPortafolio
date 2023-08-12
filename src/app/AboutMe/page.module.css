@@ -38,3 +38,46 @@
   border-radius: 45px;
   overflow: hidden;
 }
+.img img {
+  left: -190px;
+  position: absolute;
+}
+@media (min-width: 1441px) {
+}
+
+@media (max-width: 700px) {
+  .main {
+    height: auto;
+  }
+  .content {
+    margin-top: 250px;
+    margin-bottom: 60px;
+    flex-direction: column;
+    gap: 20px;
+  }
+  .content div {
+    width: 100%;
+    height: auto;
+    padding: 0px 20px;
+    justify-content: center;
+    align-items: center;
+  }
+  .main h3 {
+    font-size: 20px;
+  }
+  .main p {
+    font-size: 16px;
+    text-align: center;
+  }
+  .img {
+    width: 300px;
+    height: 384px;
+  }
+  .img img {
+    left: -270px;
+    position: absolute;
+  }
+}
+
+@media (min-width: 701px) and (max-width: 1120px) {
+}

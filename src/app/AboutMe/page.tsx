@@ -1,4 +1,4 @@
-'use client'
+"use client";
 
 import { Navbar } from "@/components/Navbar/Navbar";
 import styles from "./page.module.css";
@@ -25,13 +25,7 @@ const AboutMe = () => {
         </div>
         <div>
           <span className={styles.img}>
-            <Image
-              src="/PersonalFoto.jpg"
-              width={778}
-              height={564}
-              alt=""
-              style={{ left: "-190px", position: "absolute" }}
-            />
+            <Image src="/PersonalFoto.jpg" width={778} height={564} alt="" />
           </span>
         </div>
       </section>

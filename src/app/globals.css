@@ -46,6 +46,12 @@ a {
   width: 800px;
   height: 392px;
 }
+#LlamaGallery {
+  position: relative;
+  display: flex;
+  width: 800px;
+  height: 392px;
+}
 @media (min-width: 1441px) {
   #SADImage {
     width: 574px;
@@ -58,6 +64,27 @@ a {
 }
 
 @media (max-width: 700px) {
+  #SADImage {
+    width: 250px;
+    height: 251px;
+  }
+
+  #MSDEVImage {
+    width: 250px;
+    height: 218px;
+  }
+  #AIPPIAImage {
+    width: 250px;
+    height: 150px;
+  }
+  #MEDICALImage {
+    width: 250px;
+    height: 149px;
+  }
+  #LlamaGallery {
+    width: 250px;
+    height: 149px;
+  }
 }
 
 @media (min-width: 701px) and (max-width: 1120px) {

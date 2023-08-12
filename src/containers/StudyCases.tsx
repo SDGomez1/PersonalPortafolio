@@ -56,7 +56,7 @@ export const StudyCases = () => {
           subtitle="FullStack with NextJs | Database schema design"
           description="Code implementation with backend API connections to MailChimp. From design to coded website"
           imgSrc="/LlamaGallery.png"
-          idImg="MEDICALImage"
+          idImg="LlamaGallery"
         />
       </section>
     );
