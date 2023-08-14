@@ -70,20 +70,21 @@ a {
   }
 
   #MSDEVImage {
-    width: 250px;
-    height: 218px;
+    width: 350px;
+    height: 305px;
   }
   #AIPPIAImage {
-    width: 250px;
-    height: 150px;
+    width: 350px;
+    height: 190px;
+    transform: translateY(-60px);
   }
   #MEDICALImage {
-    width: 250px;
-    height: 149px;
+    width: 350px;
+    height: 190px;
   }
   #LlamaGallery {
-    width: 250px;
-    height: 149px;
+    width: 350px;
+    height: 190px;
   }
 }
 

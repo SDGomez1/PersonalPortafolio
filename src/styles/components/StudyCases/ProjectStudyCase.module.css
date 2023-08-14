@@ -56,10 +56,10 @@
 @media (max-width: 700px) {
   .main {
     flex-direction: column;
-    height: auto;
+    height: 600px;
     padding: 20px 0px;
     gap: 20px;
-    border-radius: 16px;
+    border-radius: 8px;
   }
   .main div {
     padding-left: 0;

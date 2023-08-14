@@ -6,6 +6,10 @@
   height: 100vh;
   max-height: 100vh;
 }
+.space {
+  width: 100vw;
+  height: 0px;
+}
 
 .content {
   height: 100%;
@@ -16,7 +20,7 @@
 }
 .content div {
   width: 50%;
-  padding: 180px;
+  padding: 120px;
   display: flex;
   flex-direction: column;
 }
@@ -43,17 +47,26 @@
   position: absolute;
 }
 @media (min-width: 1441px) {
+  .content div {
+    padding: 180px;
+  }
 }
 
 @media (max-width: 700px) {
   .main {
     height: auto;
+    max-height: none;
+  }
+  .space {
+    width: 100vw;
+    height: 120px;
   }
   .content {
-    margin-top: 250px;
     margin-bottom: 60px;
+    margin-top: 0px;
     flex-direction: column;
     gap: 20px;
+    height: auto;
   }
   .content div {
     width: 100%;
