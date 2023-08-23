@@ -5,60 +5,82 @@ import { ProjectStudyCase } from "@/components/StudyCases/ProjectStudyCase";
 import { useEffect, useRef } from "react";
 import { useInView } from "framer-motion";
 import { setInView } from "@/redux/features/workInView/WorkInViewSlice";
+import { WorkCardEnglish, WorkCardSpanish } from "@/data/WorkCard";
+import { ProjectCardEnglish, ProjectCardSpanish } from "@/data/ProjectCard";
+import { current } from "@reduxjs/toolkit";
 
 export const StudyCases = () => {
   const state = useAppSelector((state) => state.switch.value);
+  const language = useAppSelector((state) => state.language.value);
+
   const dispatch = useAppDispatch();
 
   const ref = useRef(null);
   const isInView = useInView(ref, { amount: 0.2 });
+
   useEffect(() => {
     dispatch(setInView(isInView));
   });
+
+  const WorkDataCard = !language
+    ? WorkCardEnglish.map((currentData) => {
+        return (
+          <WorkStudyCase
+            key={currentData.id}
+            title={currentData.title}
+            subtitle={currentData.subtitle}
+            description={currentData.description}
+            source={currentData.source}
+            idImage={currentData.idImage}
+          />
+        );
+      })
+    : WorkCardSpanish.map((currentData) => {
+        return (
+          <WorkStudyCase
+            key={currentData.id}
+            title={currentData.title}
+            subtitle={currentData.subtitle}
+            description={currentData.description}
+            source={currentData.source}
+            idImage={currentData.idImage}
+          />
+        );
+      });
+
+  const ProjectDataCard = !language
+    ? ProjectCardEnglish.map((currentData) => {
+        return (
+          <ProjectStudyCase
+            key={currentData.id}
+            title={currentData.title}
+            subtitle={currentData.subtitle}
+            description={currentData.description}
+            imgSrc={currentData.imgSrc}
+            idImg={currentData.idImg}
+          />
+        );
+      })
+    : ProjectCardSpanish.map((currentData) => {
+        return (
+          <ProjectStudyCase
+            key={currentData.id}
+            title={currentData.title}
+            subtitle={currentData.subtitle}
+            description={currentData.description}
+            imgSrc={currentData.imgSrc}
+            idImg={currentData.idImg}
+          />
+        );
+      });
+
   if (!state) {
     return (
       <section ref={ref} className={styles.main}>
-        <WorkStudyCase
-          title="Amazon Product Gallery"
-          subtitle="UX Design | Developed with NextJs"
-          description="Complete design and develop of a web page based on showing the best product deals on Amazon"
-          source="/SAD.png"
-          idImage="SADImage"
-        />
-        <WorkStudyCase
-          title="MS Dev col Landing Page"
-          subtitle="UX Design | Developed with ReactJs"
-          description="Brand Concept, page design, integration with whatsApp and dinamic animations. Coded and deployed entirely"
-          source="/MSDEV.png"
-          idImage="MSDEVImage"
-        />
-        <WorkStudyCase
-          title="AIPPIA WebPage"
-          subtitle="Coding | FullStack Development with NextJs"
-          description="Code implementation with backend API connections to MailChimp. From design to coded website"
-          source="/AIPPIA.png"
-          idImage="AIPPIAImage"
-        />
+        {WorkDataCard}
       </section>
     );
   } else {
-    return (
-      <section className={styles.main}>
-        <ProjectStudyCase
-          title="Medical Appointment | Web App"
-          subtitle="FullStack with NextJs | Database schema design"
-          description="Code implementation with backend API connections to MailChimp. From design to coded website"
-          imgSrc="/MedicalAPP.png"
-          idImg="MEDICALImage"
-        />
-        <ProjectStudyCase
-          title="Llama Gallery | Web Page"
-          subtitle="FullStack with NextJs | Database schema design"
-          description="Code implementation with backend API connections to MailChimp. From design to coded website"
-          imgSrc="/LlamaGallery.png"
-          idImg="LlamaGallery"
-        />
-      </section>
-    );
+    return <section className={styles.main}>{ProjectDataCard}</section>;
   }
 };
