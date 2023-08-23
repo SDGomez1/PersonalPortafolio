@@ -18,6 +18,12 @@ const Path = (props: any) => (
 );
 
 function useAnimation(isOpen: boolean) {
+  const [actualWindowSize, setActualWindowSize] = useState(true);
+
+  useEffect(() => {
+    setActualWindowSize(window.matchMedia("(max-width: 700px)").matches);
+  }, []);
+
   const [scope, animate] = useAnimate();
 
   useEffect(() => {
@@ -41,9 +47,17 @@ function useAnimation(isOpen: boolean) {
       [
         "li",
         {
-          transform: isOpen ? "scale(1)" : "scale(0.5)",
+          transform: actualWindowSize
+            ? isOpen
+              ? "scale(1)"
+              : "scale(0.5)"
+            : "scale(1)",
           opacity: isOpen ? 1 : 0,
-          filter: isOpen ? "blur(0px)" : "blur(10px)",
+          filter: actualWindowSize
+            ? isOpen
+              ? "blur(0px)"
+              : "blur(10px)"
+            : "blur(0px)",
         },
         {
           delay: isOpen ? stagger(0.05) : stagger(0.05, { from: "last" }),

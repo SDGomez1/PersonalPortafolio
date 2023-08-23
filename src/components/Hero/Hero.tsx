@@ -5,6 +5,7 @@ import { motion } from "framer-motion";
 import { Raleway } from "next/font/google";
 import { useAppSelector } from "@/redux/hooks";
 import { Decoration } from "./Decoration";
+import { useEffect, useState } from "react";
 
 const raleway = Raleway({ subsets: ["latin"] });
 
@@ -12,7 +13,11 @@ export const Hero = () => {
   const state = useAppSelector((state) => state.switch.value);
   const currentLanguage = useAppSelector((state) => state.language.value);
 
-  const actualWindowSize = window.matchMedia("(max-width: 700px)").matches;
+  const [actualWindowSize, setActualWindowSize] = useState(true);
+
+  useEffect(() => {
+    setActualWindowSize(window.matchMedia("(max-width: 700px)").matches);
+  }, []);
 
   return (
     <section className={styles.main}>
