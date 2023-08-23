@@ -15,11 +15,6 @@ export const ProjectStudyCase = (props: {
     <motion.div
       className={styles.main}
       animate={isInView ? { background: "#320C67" } : { background: "#320C67" }}
-      whileHover={{
-        scale: 1.02,
-        borderRadius: "20px",
-        boxShadow: "0px 4px 43px -4px rgba(0, 0, 0, 0.25)",
-      }}
       transition={{ duration: 0.3, type: "tween" }}
     >
       <div className={styles.textContainer}>

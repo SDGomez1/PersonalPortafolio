@@ -14,11 +14,6 @@ export const WorkStudyCase = (props: {
   return (
     <motion.div
       className={styles.main}
-      whileHover={{
-        scale: 1.02,
-        borderRadius: "20px",
-        boxShadow: "0px 4px 43px -4px rgba(0, 0, 0, 0.25)",
-      }}
       transition={{ duration: 0.3, type: "tween" }}
       animate={
         isInView
