@@ -24,7 +24,7 @@ const AboutMe = () => {
         </div>
         <div>
           <span className={styles.img}>
-            <Image src="/PersonalFoto.jpg" width={778} height={564} alt="" />
+            <Image src="/PersonalFoto.jpg" fill sizes="" alt="" />
           </span>
         </div>
       </section>

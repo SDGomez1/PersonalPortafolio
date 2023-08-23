@@ -3,8 +3,8 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  padding: 60px;
-  gap: 60px;
+  padding: 120px;
+  gap: 120px;
   width: 100%;
   overflow-x: hidden;
 }

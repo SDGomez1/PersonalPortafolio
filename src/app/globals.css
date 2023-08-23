@@ -23,8 +23,9 @@ a {
 #SADImage {
   position: relative;
   display: flex;
-  width: 554px;
-  height: 557px;
+  width: 454px;
+  height: 457px;
+  transform: translatex(40px);
 }
 
 #MSDEVImage {
@@ -36,30 +37,45 @@ a {
 #AIPPIAImage {
   position: relative;
   display: flex;
-  width: 600px;
-  height: 350px;
+  width: 550px;
+  height: 325px;
   transform: translateY(-120px);
 }
 #MEDICALImage {
   position: relative;
   display: flex;
-  width: 800px;
-  height: 392px;
+  width: 550px;
+  height: 270px;
 }
 #LlamaGallery {
   position: relative;
   display: flex;
-  width: 800px;
-  height: 392px;
+  width: 550px;
+  height: 270px;
 }
 @media (min-width: 1441px) {
   #SADImage {
     width: 574px;
     height: 577px;
+    transform: translatex(0px);
   }
   #MSDEVImage {
     width: 817px;
     height: 710px;
+    transform: translatex(-80px);
+  }
+  #AIPPIAImage {
+    width: 700px;
+    height: 400px;
+    transform: translateY(-150px) translatex(-80px);
+  }
+  #MEDICALImage {
+    width: 700px;
+    height: 343px;
+  }
+  #LlamaGallery {
+    width: 700px;
+    height: 343px;
   }
 }
 

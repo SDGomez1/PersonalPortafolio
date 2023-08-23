@@ -42,10 +42,7 @@
   border-radius: 45px;
   overflow: hidden;
 }
-.img img {
-  left: -190px;
-  position: absolute;
-}
+
 @media (min-width: 1441px) {
   .content div {
     padding: 180px;

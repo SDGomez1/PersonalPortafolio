@@ -33,7 +33,7 @@ export const WorkStudyCase = (props: {
       </div>
       <div id={styles.image}>
         <span id={props.idImage}>
-          <Image src={props.source} fill alt="" />
+          <Image src={props.source} fill sizes="" alt="" />
         </span>
       </div>
     </motion.div>
