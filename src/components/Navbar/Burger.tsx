@@ -47,17 +47,17 @@ function useAnimation(isOpen: boolean) {
       [
         "li",
         {
-          transform: actualWindowSize
+          transform: !actualWindowSize
             ? isOpen
               ? "scale(1)"
               : "scale(0.5)"
             : "scale(1)",
           opacity: isOpen ? 1 : 0,
-          filter: actualWindowSize
+          filter: !actualWindowSize
             ? isOpen
               ? "blur(0px)"
               : "blur(10px)"
-            : "blur(0px)",
+            : "",
         },
         {
           delay: isOpen ? stagger(0.05) : stagger(0.05, { from: "last" }),
